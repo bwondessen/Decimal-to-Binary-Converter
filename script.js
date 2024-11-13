@@ -2,6 +2,21 @@ const numberInput = document.getElementById("number-input");
 const convertBtn = document.getElementById("convert-btn");
 const result = document.getElementById("result");
 
+const animationData = [
+    {
+        inputVal: 5,
+        addElDelay: 1000
+    },
+    {
+        inputVal: 2,
+        addElDelay: 1500
+    },
+    {
+        inputVal: 1,
+        addElDelay: 2000
+    }
+];
+
 const decimalToBinary = (input) => {
     if (input === 0 || input === 1) {
         return String(input);
@@ -11,17 +26,21 @@ const decimalToBinary = (input) => {
 };
 
 const showAnimation = () => {
-
+    setTimeout(() => {
+        console.log("free");
+    }, 500);
+    setTimeout(() => {
+        console.log("Code");
+    }, 1000);
+    setTimeout(() => {
+        console.log("Camp");
+    }, 1500);
 };
 
 const checkUserInput = () => {
     const inputInt = parseInt(numberInput.value);
 
-    if (
-        !numberInput.value ||
-        isNaN(inputInt) ||
-        inputInt < 0
-    ) {
+    if (!numberInput.value || isNaN(inputInt) || inputInt < 0) {
         alert("Please provide a decimal number greater than or equal to 0");
         return;
     }
